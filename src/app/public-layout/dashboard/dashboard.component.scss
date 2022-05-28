@@ -49,6 +49,7 @@ $white: #ffffff;
     text-transform: capitalize;
     color: $white;
     background: $black;
+    border: 1px solid $black;
     transition: all 0.5s;
   }
 
@@ -57,7 +58,6 @@ $white: #ffffff;
     color: $black;
     background: $white;
     transform: scale(1.2);
-    border: 1px solid $black;
     margin-right: 1.6%;
   }
 

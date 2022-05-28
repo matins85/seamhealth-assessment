@@ -1,1 +1,55 @@
-<p>doctor-table works!</p>
+<div class="doctor_wrapper">
+
+    <div class="search_icon_p" #form>
+        <form class="search-form">
+            <button matSuffix mat-icon-button class="form-icon">
+                <span class="fa fa-search"></span>
+            </button>
+            <input type="text" placeholder="Search doctors">
+        </form>
+    </div>
+
+    <h4>
+        doctor lists
+    </h4>
+
+    <div class="table-container">
+        <div class="table-responsive" #table>
+            <table datatable [dtOptions]="dtOptions"
+                class="row-border table table-striped table-hover table-borderless">
+                <thead>
+                    <tr>
+                        <th class="align-middle">Name</th>
+                        <th class="align-middle">Username</th>
+                        <th class="align-middle">Email</th>
+                        <th class="align-middle">Phone</th>
+                        <th class="align-middle">city</th>
+                        <th class="align-middle">website</th>
+                    </tr>
+                </thead>
+                <tbody *ngIf="datas?.length != 0">
+                    <tr *ngFor="let data of datas;">
+                        <td class="align-middle">{{ data.name }}</td>
+                        <td class="align-middle">{{ data.username }}</td>
+                        <td class="align-middle">{{ data.email }}</td>
+                        <td class="align-middle">{{ data.phone }}</td>
+                        <td class="align-middle">{{ data.city }}</td>
+                        <td class="align-middle">{{ data.website }}</td>
+                    </tr>
+                </tbody>
+                <tbody *ngIf="datas?.length == 0">
+                    <tr>
+                        <td class="no-data-available">No data!</td>
+                        <td class="no-data-available">No data!</td>
+                        <td class="no-data-available">No data!</td>
+                        <td class="no-data-available">No data!</td>
+                        <td class="no-data-available">No data!</td>
+                        <td class="no-data-available">No data!</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</div>

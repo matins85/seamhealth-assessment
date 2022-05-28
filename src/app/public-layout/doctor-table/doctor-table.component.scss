@@ -1,0 +1,213 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+$font: "JetBrains Mono";
+$black: #000000;
+$white: #ffffff;
+
+.doctor_wrapper {
+  padding-left: 6rem;
+  padding-right: 6rem;
+  padding-top: 2rem;
+
+  form {
+    margin: auto;
+  }
+
+  .search-form {
+    vertical-align: top;
+    border-radius: 5px;
+    background: $white;
+    border-radius: 30px;
+    border: 1px solid $black;
+    width: 40rem;
+  }
+
+  input[type="text"] {
+    height: 50px;
+    font-family: $font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    padding-left: 15px;
+    color: $black;
+    border-radius: 30px;
+    border: unset;
+  }
+
+  [type="text"]:focus {
+    outline: none;
+  }
+
+  .form-icon {
+    color: $black;
+    margin-left: 10px;
+    border-radius: 50%;
+  }
+
+  ::-webkit-input-placeholder {
+    /* Edge */
+    font-family: $font;
+    font-style: normal;
+    font-weight: 500;
+    color: $black;
+  }
+
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    font-family: $font;
+    font-style: normal;
+    font-weight: 500;
+    color: $black;
+  }
+
+  ::placeholder {
+    font-family: $font;
+    font-style: normal;
+    font-weight: 500;
+    color: $black;
+  }
+
+  h4 {
+    font-family: $font;
+    font-style: normal;
+    font-weight: 500;
+    color: $black;
+    text-transform: capitalize;
+    margin-top: 1.5rem;
+  }
+
+  .table-container {
+    margin-top: 2.5rem;
+    margin-bottom: 3rem;
+    width: 100%;
+  }
+
+  table {
+    border: none;
+  }
+
+  thead {
+    border: none;
+  }
+
+  thead tr {
+    background: $white;
+    text-align: left;
+    font-family: $font;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    color: $black;
+    text-transform: capitalize;
+  }
+
+  tbody tr {
+    font-family: $font;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    color: $black;
+  }
+
+  tr th {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  tr td {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  ::ng-deep .dataTables_wrapper .dataTables_paginate .paginate_button {
+    color: $white !important;
+    background: $black !important;
+    border: 1px solid $black;
+    font-family: $font;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    transition: all 0.5s;
+    border-radius: 10px;
+  }
+
+  ::ng-deep .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    color: $black !important;
+    background: $white !important;
+    border: 1px solid $black;
+    font-family: $font;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    transition: all 0.5s;
+  }
+
+  ::ng-deep .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: $black !important;
+    background: $white !important;
+  }
+
+  ::ng-deep table.dataTable thead .sorting {
+    background-image: unset !important;
+  }
+
+  ::ng-deep table.dataTable thead .sorting::after {
+    display: none;
+  }
+
+  ::ng-deep table.dataTable thead .sorting::before {
+    display: none;
+  }
+
+  // ::ng-deep table.dataTable thead .sorting_asc {
+  //   display: none;
+  // }
+
+  ::ng-deep .table-striped > tbody > tr:nth-of-type(odd) {
+    background: $white;
+  }
+
+  ::ng-deep .table-striped:hover > tbody:hover > tr:nth-of-type(even):hover {
+    background: $white !important;
+  }
+
+  ::ng-deep .dataTables_wrapper .dataTables_length select {
+    border: 1px solid $black;
+    font-family: $font;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+
+  ::ng-deep .dataTables_wrapper .dataTables_length label {
+    color: $black;
+    font-family: $font;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+
+  ::ng-deep .dataTables_wrapper .dataTables_filter {
+    display: none;
+  }
+
+  .dataTables_wrapper .dataTables_length,
+  .dataTables_wrapper .dataTables_filter,
+  .dataTables_wrapper .dataTables_info,
+  .dataTables_wrapper .dataTables_processing,
+  .dataTables_wrapper .dataTables_paginate {
+    color: $black;
+    font-family: $font;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .doctor_wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

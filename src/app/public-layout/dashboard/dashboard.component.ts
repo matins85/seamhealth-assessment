@@ -2,7 +2,6 @@ import {
   Component,
   ViewEncapsulation,
   ViewChild,
-  HostListener,
   OnInit,
   ElementRef,
 } from '@angular/core';
