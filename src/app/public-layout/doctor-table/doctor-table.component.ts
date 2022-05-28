@@ -38,7 +38,7 @@ export class DoctorTableComponent implements OnInit {
   is_loading = false;
   disabled = true;
   error = false;
-  search: string = "";
+  search: string = '';
 
   clickEventSubscription?: Subscription;
 
@@ -58,12 +58,14 @@ export class DoctorTableComponent implements OnInit {
   // search form
   modelChange(search: any) {
     const data = this.datas2?.filter((data: any) => {
-      return data.name.toLowerCase().startsWith(search.toLowerCase()) ||
-      data.username.toLowerCase().startsWith(search.toLowerCase()) ||
-      data.email.toLowerCase().startsWith(search.toLowerCase()) ||
-      data.phone.toLowerCase().startsWith(search.toLowerCase()) ||
-      data.address.city.toLowerCase().startsWith(search.toLowerCase()) ||
-      data.website.toLowerCase().startsWith(search.toLowerCase());
+      return (
+        data.name.toLowerCase().startsWith(search.toLowerCase()) ||
+        data.username.toLowerCase().startsWith(search.toLowerCase()) ||
+        data.email.toLowerCase().startsWith(search.toLowerCase()) ||
+        data.phone.toLowerCase().startsWith(search.toLowerCase()) ||
+        data.address.city.toLowerCase().startsWith(search.toLowerCase()) ||
+        data.website.toLowerCase().startsWith(search.toLowerCase())
+      );
     });
     this.datas = data;
   }
@@ -80,7 +82,7 @@ export class DoctorTableComponent implements OnInit {
         // add data to table
         this.datas = data;
         this.datas2 = data;
-        this.dtTrigger.next
+        this.dtTrigger.next;
         this.loading = false;
         this.error = false;
         // initialize animation
@@ -110,7 +112,7 @@ export class DoctorTableComponent implements OnInit {
         // add data to table
         this.datas = data;
         this.datas2 = data;
-        this.dtTrigger.next
+        this.dtTrigger.next;
         this.loading = false;
         this.error = false;
         // initialize animation
