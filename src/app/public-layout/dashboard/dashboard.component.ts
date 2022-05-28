@@ -125,7 +125,6 @@ export class DashboardComponent implements OnInit {
   checkFormValidity() {
     const feed = this.feedbackFormDirective.invalid;
     const control = this.feedbackFormDirective.form.controls;
-    console.log(control);
     if (feed) {
       if (control.name.status == 'INVALID') {
         this.nameError = true;
@@ -141,7 +140,9 @@ export class DashboardComponent implements OnInit {
       }
       if (control.email.status == 'INVALID') {
         this.emailError = true;
-        this.formErrors['email'] = 'email is required.';
+        this.formErrors['email'] = control.email.errors.email
+          ? 'email not valid.'
+          : 'email is required.';
       } else {
         this.emailError = false;
       }

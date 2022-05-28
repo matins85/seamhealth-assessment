@@ -47,6 +47,7 @@ export class DoctorTableComponent implements OnInit {
     public sharedService: ToggleNavService,
     private fb: FormBuilder
   ) {
+    this.sharedService.setMessage('')
     this.clickEventSubscription = this.sharedService
       .getClickEvent()
       .subscribe((data: any) => {
