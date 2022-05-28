@@ -10,5 +10,13 @@ body {
 }
 body {
   margin: 0;
-  background: #FFFFFF;
+  background: #ffffff;
+}
+
+.success {
+  color: lightgreen;
+}
+
+.error {
+  color: lightcoral;
 }

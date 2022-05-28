@@ -4,45 +4,53 @@
 
         <h2>register new doctor</h2>
 
-        <form #card2>
+        <form #card2 novalidate [formGroup]="feedbackForm" #fform="ngForm" (ngSubmit)="addDoctor()">
             <!-- Name -->
             <mat-form-field class="half-width" appearance="outline">
                 <mat-label>Name</mat-label>
-                <input matInput type="text">
+                <input matInput type="text" formControlName="name">
+                <mat-error>{{formErrors.name}}</mat-error>
+                <!-- <mat-hint *ngIf="nameError" class="hint-error"></mat-hint> -->
             </mat-form-field>
 
             <!-- Username -->
             <mat-form-field class="half-width" appearance="outline">
                 <mat-label>Username</mat-label>
-                <input matInput type="text">
+                <input matInput type="text" formControlName="username">
+                <mat-error>{{formErrors.username}}</mat-error>
             </mat-form-field>
 
             <!-- Email -->
             <mat-form-field class="half-width" appearance="outline">
                 <mat-label>Email</mat-label>
-                <input matInput type="email">
+                <input matInput type="email" formControlName="email">
+                <mat-error>{{formErrors.email}}</mat-error>
             </mat-form-field>
 
             <!-- Phone -->
             <mat-form-field class="half-width" appearance="outline">
                 <mat-label>Phone</mat-label>
-                <input matInput type="tel">
+                <input matInput type="tel" formControlName="phone">
+                <mat-error>{{formErrors.phone}}</mat-error>
             </mat-form-field>
 
             <!-- City -->
             <mat-form-field class="half-width" appearance="outline">
                 <mat-label>city</mat-label>
-                <input matInput type="text">
+                <input matInput type="text" formControlName="city">
+                <mat-error>{{formErrors.city}}</mat-error>
             </mat-form-field>
 
             <!-- Website -->
             <mat-form-field class="half-width" appearance="outline">
                 <mat-label>website</mat-label>
-                <input matInput type="url">
+                <input matInput type="website" formControlName="website">
+                <mat-error>{{formErrors.website}}</mat-error>
             </mat-form-field>
 
             <div class="register_p">
-                <button mat-button type="submit" class="register">register</button>
+                <button mat-button [disabled]="disabled === true" type="submit"
+                    class="register">register</button>
             </div>
 
         </form>
