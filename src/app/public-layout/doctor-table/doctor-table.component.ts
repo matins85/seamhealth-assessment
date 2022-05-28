@@ -80,7 +80,7 @@ export class DoctorTableComponent implements OnInit {
         // add data to table
         this.datas = data;
         this.datas2 = data;
-        this.dtTrigger.next;
+        this.dtTrigger.next
         this.loading = false;
         this.error = false;
         // initialize animation
@@ -110,7 +110,7 @@ export class DoctorTableComponent implements OnInit {
         // add data to table
         this.datas = data;
         this.datas2 = data;
-        this.dtTrigger.next;
+        this.dtTrigger.next
         this.loading = false;
         this.error = false;
         // initialize animation
