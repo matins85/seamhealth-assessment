@@ -1,11 +1,12 @@
 <div class="doctor_wrapper">
 
-    <div class="search_icon_p" #form>
+    <div class="search_icon_p" #card>
         <form class="search-form">
             <button matSuffix mat-icon-button class="form-icon">
                 <span class="fa fa-search"></span>
             </button>
-            <input type="text" placeholder="Search doctors">
+            <input [ngModel]="search" (ngModelChange)="modelChange($event)" name="search" type="text"
+                placeholder="Search doctors">
         </form>
     </div>
 
