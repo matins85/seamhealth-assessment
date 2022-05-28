@@ -10,8 +10,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 // Gsap module
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Subscription } from 'rxjs';
 import { HttpService } from 'src/app/services/http.service';
 import { Register } from '../shared/form';
+import { ToggleNavService } from '../sharedService/toggle-nav.service';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,6 +37,8 @@ export class DashboardComponent implements OnInit {
   feedback!: Register;
   disabled = false;
 
+  clickEventSubscription?: Subscription;
+
   formErrors: any = {
     name: '',
     username: '',
@@ -53,6 +57,7 @@ export class DashboardComponent implements OnInit {
     },
     email: {
       required: 'email is required.',
+      email: 'email not valid.',
     },
     phone: {
       required: 'phone is required.',
@@ -68,7 +73,8 @@ export class DashboardComponent implements OnInit {
   constructor(
     // private httpService: HttpService,
     private fb: FormBuilder,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    public sharedService: ToggleNavService
   ) {
     this.createForm();
   }
@@ -77,7 +83,7 @@ export class DashboardComponent implements OnInit {
     this.feedbackForm = this.fb.group({
       name: ['', [Validators.required]],
       username: ['', [Validators.required]],
-      email: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required]],
       city: ['', [Validators.required]],
       website: ['', [Validators.required]],
@@ -119,6 +125,7 @@ export class DashboardComponent implements OnInit {
   checkFormValidity() {
     const feed = this.feedbackFormDirective.invalid;
     const control = this.feedbackFormDirective.form.controls;
+    console.log(control);
     if (feed) {
       if (control.name.status == 'INVALID') {
         this.nameError = true;
@@ -181,11 +188,23 @@ export class DashboardComponent implements OnInit {
         username: this.feedback.username,
         email: this.feedback.email,
         phone: this.feedback.phone,
-        city: this.feedback.city,
+        address: { city: this.feedback.city },
         website: this.feedback.website,
       };
-      console.log(data);
-      this.disabled = false;
+      setTimeout(() => {
+        this.sharedService.setMessage(data);
+        this.loading = false;
+        this.disabled = false;
+        this.feedbackFormDirective.resetForm();
+        this.snackBar.open('Registration successful!', '', {
+          duration: 3000,
+          panelClass: 'success',
+          horizontalPosition: 'center',
+          verticalPosition: 'top',
+        });
+        this.sharedService.sendClickEvent();
+      }, 3000);
+
       // this.httpService.doctotsList(data).subscribe(
       //   (data: any) => {
       //     this.loading = false;

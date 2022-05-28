@@ -9,8 +9,9 @@ import { Register } from '../shared/form';
 // Gsap module
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Subject } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
 import { HttpService } from 'src/app/services/http.service';
+import { ToggleNavService } from '../sharedService/toggle-nav.service';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -37,7 +38,16 @@ export class DoctorTableComponent implements OnInit {
   disabled = true;
   error = false;
 
-  constructor(private httpService: HttpService) {}
+  clickEventSubscription?: Subscription;
+
+  constructor(
+    private httpService: HttpService,
+    public sharedService: ToggleNavService
+  ) {
+    this.clickEventSubscription = this.sharedService.getClickEvent().subscribe((data: any) => {
+      this.datas.unshift(this.sharedService.getMessage())
+    })
+  }
 
   renderTable() {
     this.dtOptions = {

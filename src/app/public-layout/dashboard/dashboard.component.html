@@ -23,7 +23,7 @@
             <!-- Email -->
             <mat-form-field class="half-width" appearance="outline">
                 <mat-label>Email</mat-label>
-                <input matInput type="email" formControlName="email">
+                <input matInput type="email" email formControlName="email">
                 <mat-error>{{formErrors.email}}</mat-error>
             </mat-form-field>
 
@@ -49,8 +49,15 @@
             </mat-form-field>
 
             <div class="register_p">
-                <button mat-button [disabled]="disabled === true" type="submit"
-                    class="register">register</button>
+                <button mat-button [disabled]="disabled === true" type="submit" class="register">
+                    <span *ngIf="!loading">register</span>
+                    <div *ngIf="loading" class="loader">
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                    </div>
+                </button>
             </div>
 
         </form>
