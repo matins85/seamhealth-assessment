@@ -7,12 +7,11 @@
     </mat-sidenav>
 
     <mat-sidenav-content class="mat-sidenav-content">
-        <app-header (publicsidenavToggle)="publicsidenav.toggle()">
-
-        </app-header>
+        <!-- <app-header (publicsidenavToggle)="publicsidenav.toggle()">
+        </app-header> -->
         <div class="main2">
             <router-outlet (publicsidenavToggle2)="publicsidenav.toggle()"></router-outlet>
         </div>
-        <app-footer></app-footer>
+        <!-- <app-footer></app-footer> -->
     </mat-sidenav-content>
 </mat-sidenav-container>

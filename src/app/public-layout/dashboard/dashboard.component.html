@@ -1,6 +1,53 @@
-<div class="wrapper" #card>
+<div class="wrapper">
 
-    <p>dashboard works!</p>
+    <div class="container" #card>
+
+        <h2>register new doctor</h2>
+
+        <form #card2>
+            <!-- Name -->
+            <mat-form-field class="half-width" appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput type="text">
+            </mat-form-field>
+
+            <!-- Username -->
+            <mat-form-field class="half-width" appearance="outline">
+                <mat-label>Username</mat-label>
+                <input matInput type="text">
+            </mat-form-field>
+
+            <!-- Email -->
+            <mat-form-field class="half-width" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="email">
+            </mat-form-field>
+
+            <!-- Phone -->
+            <mat-form-field class="half-width" appearance="outline">
+                <mat-label>Phone</mat-label>
+                <input matInput type="tel">
+            </mat-form-field>
+
+            <!-- City -->
+            <mat-form-field class="half-width" appearance="outline">
+                <mat-label>city</mat-label>
+                <input matInput type="text">
+            </mat-form-field>
+
+            <!-- Website -->
+            <mat-form-field class="half-width" appearance="outline">
+                <mat-label>website</mat-label>
+                <input matInput type="url">
+            </mat-form-field>
+
+            <div class="register_p">
+                <button mat-button type="submit" class="register">register</button>
+            </div>
+
+        </form>
+
+    </div>
 
 </div>
 

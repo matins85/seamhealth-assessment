@@ -21,6 +21,9 @@ gsap.registerPlugin(ScrollTrigger);
 export class DashboardComponent implements OnInit {
   @ViewChild('card', { static: true })
   card!: ElementRef<HTMLDivElement>;
+  // card2
+  @ViewChild('card2', { static: true })
+  card2!: ElementRef<HTMLDivElement>;
 
   hide = true;
 
@@ -30,13 +33,21 @@ export class DashboardComponent implements OnInit {
     gsap.from(this.card.nativeElement.children, {
       delay: 0.5,
       duration: 0.4,
-      x: -40,
+      y: 40,
+      opacity: 0,
+      stagger: 0.15,
+    });
+    // card2
+    gsap.from(this.card2.nativeElement.children, {
+      delay: 0.5,
+      duration: 0.4,
+      y: 40,
       opacity: 0,
       stagger: 0.15,
     });
   }
 
   ngOnInit(): void {
-    // this.initAnimations();
+    this.initAnimations();
   }
 }
