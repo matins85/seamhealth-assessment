@@ -1,0 +1,14 @@
+$white: #ffffff;
+$background: #ffffff;
+
+mat-sidenav-container {
+  height: 100%;
+}
+
+mat-sidenav {
+  width: 250px;
+  overflow-x: hidden;
+  background: $background;
+  opacity: 1;
+  color: $white;
+}
